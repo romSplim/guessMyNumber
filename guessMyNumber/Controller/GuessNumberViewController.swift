@@ -32,7 +32,7 @@ class GuessNumberViewController: UIViewController {
     
     @objc func enterButtonPressed() {
         guard let typedNumber = guessNumberTextField.text else { return }
-        let compGuessingVC = ComputerGuessingViewController(number: Int(typedNumber)!)
+        let compGuessingVC = ComputerGuessingViewController(number: Int(typedNumber) ?? 100)
         compGuessingVC.modalPresentationStyle = .fullScreen
         present(compGuessingVC, animated: true)
     }

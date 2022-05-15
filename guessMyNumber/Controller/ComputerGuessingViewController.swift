@@ -136,7 +136,8 @@ class ComputerGuessingViewController: UIViewController {
     }
     
     func showHelpActionSheet() {
-        let alert = UIAlertController(title: "Не та кнопка", message: "Вы загадали число \(game.typedNumber)", preferredStyle: .actionSheet)
+        let alertStyle: UIAlertController.Style = UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet
+        let alert = UIAlertController(title: "Не та кнопка", message: "Вы загадали число \(game.typedNumber)", preferredStyle: alertStyle)
         let action = okAction(with: "ОК")
         alert.addAction(action)
         self.present(alert, animated: true)
